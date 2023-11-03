@@ -1,0 +1,57 @@
+.Dashboard {
+    margin: 0 auto;
+    /* padding: 20px; */
+    width:1200px;
+    background-color: #ff9500;
+    /* border-radius: 20px; */
+    
+}
+
+nav {
+    background-color: #270141;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    margin-right: 10px;
+}
+
+li:last-child {
+    margin-right: 0;
+}
+
+.dashboardButton {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+.dashboardButton:focus {
+    outline: none;
+}
+
+.dashboardButton:hover {
+    background-color: rgb(92, 5, 173);
+    box-shadow: 0 0 30px rgb(134, 130, 130);
+}
+
+/* Active Tab */
+.active {
+    border-bottom: 2px solid #fff;
+}
+
+/* .dashboardButton{
+    background-color: blue;
+} */
