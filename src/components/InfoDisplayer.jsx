@@ -17,7 +17,7 @@ const InfoDisplayer = ({ info, setInfo }) => {
     }
 
     useEffect(() => {
-        databaseUtils.fetchingDataFromDB().then((data) => setInfo(data));
+        databaseUtils.fetchingDataFromDB().then((data) => setInfo(data.reverse()));
         // setFetchData(JSON.parse(import.meta.env.VITE_FETCH_DATA));
     }, []);
 
@@ -35,7 +35,7 @@ const InfoDisplayer = ({ info, setInfo }) => {
             setCurrentView(currentView - entriesPerview);
         }
     }
-
+  
     return (
         <div className='InfoDisplayer'>
             {(info && info.length != 0) ?
@@ -47,10 +47,9 @@ const InfoDisplayer = ({ info, setInfo }) => {
                         </thead>
                         <tbody>
                             <tr className="table-header">
-                                <th className="col col-1">Name</th>
-                                <th className="col col-2">Weight</th>
-                                <th className="col col-3">Speed</th>
-                                <th className="col col-4">Crewmate</th>
+                                <th className="col col-1">Index</th>
+                                <th className="col col-2">Name</th>
+                                <th className="col col-3">Crewmate</th>
      
                             </tr>
 
@@ -64,10 +63,9 @@ const InfoDisplayer = ({ info, setInfo }) => {
 
                                 return (
                                     <tr key={id} className="table-row" onClick={(() => handleClick(index))}>
-                                        <td className="col col-1">{name}</td>
-                                        <td className="col col-2">{weight}</td>
-                                        <td className="col col-3">{speed}</td>
-                                        <td className="col col-4">{color? <img src={'/src/assets/images/' + color + 'Sprite.png'} />: <></>}</td> 
+                                        <td className="col col-1">{index}</td>
+                                        <td className="col col-2">{name}</td>
+                                        <td className="col col-3">{color? <img src={'/src/assets/images/' + color + 'Sprite.png'} />: <></>}</td> 
                                     </tr>
                                 )
                             })}
